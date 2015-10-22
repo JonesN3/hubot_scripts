@@ -4,7 +4,6 @@ module.exports = (robot) ->
 		robot.http(url)
 			.header('Accept', 'application/json')
 			.get() (err, wres, body) ->
-			 #err & response status checking code here
 					data = null
 					try
 						data = JSON.parse body
@@ -12,6 +11,10 @@ module.exports = (robot) ->
 						res.send "Ran into an error parsing JSON :("
 						console.log error
 						return
-					dagens = data.dishes[0].dish
+					console.log data
+					console.log "TEST"
+					console.log data.cafeteria[0]
+					dagens = data.cafeteria[0].dishes
+					vegan = data.cafeteria[1].dishes
 					res.send food for food in dagens
-						
+					res.send food for food in vegan
