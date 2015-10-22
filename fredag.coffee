@@ -1,5 +1,3 @@
-module.exports = (robot) ->
-
 today = new Date() 
 day = today.getDay()
 
@@ -12,9 +10,8 @@ listofdays = [
 	'Fredag'
 	'Lørdag'
 ]
+module.exports = (robot) ->
 	robot.respond /fredag?/i, (res) ->
-		
-	
 		if listofdays[day] == 'Fredag'
 			res.send "JA!!!!!"
 		else
