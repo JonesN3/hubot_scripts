@@ -15,7 +15,7 @@ listofdays = [
 	robot.respond /fredag?/i, (res) ->
 		
 	
-		if daylist[day] == 'Fredag'
+		if listofdays[day] == 'Fredag'
 			res.send "JA!!!!!"
 		else
 			res.send "Nei :("
