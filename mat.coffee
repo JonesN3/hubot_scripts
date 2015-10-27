@@ -12,9 +12,8 @@ module.exports = (robot) ->
 						console.log error
 						return
 					console.log data
-					console.log "TEST"
 					console.log data.cafeteria[0]
 					dagens = data.cafeteria[0].dishes
-					vegan = data.cafeteria[1].dishes
-					res.send food for food in dagens
-					res.send food for food in vegan
+
+					for ent in data.cafeteria
+						res.send food for food in ent.dishes
