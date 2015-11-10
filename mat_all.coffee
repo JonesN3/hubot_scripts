@@ -1,20 +1,17 @@
-# Description:
-#   "What's for lunch at the university of Oslo?"
-#
-# Configuration:
-#   None
-#
-# Commands:
-#   hubot lunsj <cafeteria>
-#
-# Author:
-#	espenaj
-#	API: vegermol
-
-
 module.exports = (robot) ->
-	url = 'http://api.desperate.solutions:5000/todays_dinner/informatikk'
-	robot.respond /lunsj1/i, (res) ->
+	robot.respond /lunsj (.*)/i, (res) ->
+		url = 'http://api.desperate.solutions/dagens/'
+		cafe = res.match[1]
+		console.log cafe
+
+		if cafe is "ifi"
+			url = url + 'informatikk'
+		else if cafe is "fred"
+			url = url + 'frederikke'
+		else url = url + cafe
+		
+		console.log url
+
 		robot.http(url)
 			.header('Accept', 'application/json')
 			.get() (err, wres, body) ->

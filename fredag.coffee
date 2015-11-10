@@ -1,3 +1,17 @@
+# Description:
+#   "Is it friday today?"
+#
+# Configuration:
+#   None
+#
+# Commands:
+#   hubot fredag?
+#
+# Author:
+#	sjurtf
+
+
+
 listofdays = [
 	'Søndag'
 	'Mandag',
@@ -8,10 +22,10 @@ listofdays = [
 	'Lørdag'
 ]
 module.exports = (robot) ->
-	today = new Date() 
-	day = today.getDay()
-
 	robot.respond /fredag?/i, (res) ->
+		today = new Date()
+		day = today.getDay()
+
 		if listofdays[day] == 'Fredag'
 			res.send "JA!!!!!"
 		else
