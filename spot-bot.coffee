@@ -31,10 +31,13 @@ module.exports = (robot) ->
 					res.send ents
 					res.send data.name
 					res.send data.album.name
+
+					console.log data.popularity
 					hipster = data.popularity * 2
 
-					if hipster > 95
+					if hipster > 95*2
 							  hipster += 8951
 
 					res.send "Hipster-level: " + (100 - hipster)
+					res.send "Preview: " + data.preview_url
 
