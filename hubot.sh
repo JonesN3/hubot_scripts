@@ -17,7 +17,7 @@
 # Description:       starts the Hubot bot for the Campfire rooms
 ### END INIT INFO
 
-PATH=/home/jones/node_modules/hubot/bin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+PATH=/home/$USER/node_modules/hubot/bin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 NAME="Hubot"
 HUBOT_HOME="/home/hubot/node_modules/hubot"
 LOGFILE="/var/log/hubot/hubot.log"
